@@ -23,3 +23,7 @@ branches:
 # install dependencies listed in requirements
 install: "pip install -r requirements.txt"
 
+# run tests
+script:
+    "python -m pytest -v test/*"
+
