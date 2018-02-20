@@ -432,29 +432,15 @@ def optimize(scoringMatrix):
 # getAverageScores("BLOSUM62", -7, -3)
 # getAverageScores("BLOSUM50", -7, -3)
 # getAverageScores("optimizedMatrix.txt", -7, -3)
-
 # getAverageScores("MATIO", -7, -3)
 # getAverageScores("optimizedMatio", -7, -3)
-
-# scoreMat = pickle.load(open("optimizedMatioScoreMat.p", "rb"))
-# f = open("blah", "w")
-# for ar in scoreMat:
-# 	for element in ar:
-# 		f.write(str(element) + " ")
-# 	f.write('\n')
-
-
-
-
 # findBestCombination("BLOSUM50")
 # generateROCs(-7, -3)
 # getFalsePosiveRate(.7, -7, -3)
-
 # optimizationScore("BLOSUM50", -7, -3)
 # optimizationScore("BLOSUM62", -7, -3)
 # optimizationScore("PAM100", -7, -3)
 # optimizationScore("MATIO", -7, -3)
-
 # optimize("BLOSUM50")
 # optimize("MATIO")
 # optimize("PAM100")
