@@ -185,13 +185,14 @@ def getAverageScores(matrix, gap, extension_penalty):
 	avgNegatives = avgNegatives / float(len(negPairs))
 	print("+: " + str(avgPositives), "-:" + str(avgNegatives))
 	return avgPositives, avgNegatives
+
 def getCombinations():
 	"""
 	find all possible combinations of having an extension penalty [-1,-5] and a gap penalty of [-1.-20]
 	"""
 	combinations = []
-	for i in range(-1, -20,-1):
-		for j in range(-1,-5,-1):
+	for i in range(-1, -21,-1):
+		for j in range(-1,-6,-1):
 			combinations.append((i,j))
 	return combinations 
 
@@ -432,8 +433,8 @@ def optimize(scoringMatrix):
 # getAverageScores("BLOSUM50", -7, -3)
 # getAverageScores("optimizedMatrix.txt", -7, -3)
 
-getAverageScores("MATIO", -7, -3)
-getAverageScores("optimizedMatio", -7, -3)
+# getAverageScores("MATIO", -7, -3)
+# getAverageScores("optimizedMatio", -7, -3)
 
 # scoreMat = pickle.load(open("optimizedMatioScoreMat.p", "rb"))
 # f = open("blah", "w")
