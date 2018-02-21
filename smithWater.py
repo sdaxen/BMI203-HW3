@@ -13,7 +13,6 @@ import numpy as np
 import random
 import pickle
 
-
 #read in pairs from input files
 posPairs = []
 postivesF = open("Pospairs.txt", "r")
@@ -26,7 +25,6 @@ negativesF = open("Negpairs.txt", "r")
 for line in negativesF.readlines():
 	pair = line.split(" ")
 	negPairs.append((pair[0], pair[1].replace("\n", "")))
-
 
 def run(file1, file2, scoringMatrix, penalty, extension_penalty,npMatrix=-1):
 	"""
@@ -317,26 +315,6 @@ def optimizationScore(matrix, gap_penalty, extension_penalty, np_matrix=-1):
 		results.append((i, run(allPairs[i][0], allPairs[i][1], matrix, gap_penalty, extension_penalty, npMatrix=np_matrix)))
 
 	results.sort(key=lambda x: x[1])
-
-	##specified in spec
-	# falsePositives = [0, .1, .2, .3]
-	# for falsePos in falsePositives:
-	# 	posCount = 0 
-	# 	threshold = -100
-	# 	for j in range(0, len(results)):
-	# 		if results[j][0] < 50: #if pos pair 
-	# 			posCount += 1
-	# 		if posCount == falsePos * 50: #70% of 50 pairs
-	# 			threshold = results[j][1]
-	# 			break
-	# 	#get true positive
-	# 	TPcount = 0 #false positives
-	# 	for j in range(0, len(results)):
-	# 		if results[j][0] < 50 and results[j][1] >= threshold: #if a positive pair and greater than threshold
-	# 			TPcount += 1
-	# 	TPrate = TPcount / float(50)
-	# 	totalScore += TPrate
-	# return totalScore
 
 	##my optimization function to match part 1
 	TPcount = 0 #True positives, find the score at which 70% of positive pairs score higher than this score
